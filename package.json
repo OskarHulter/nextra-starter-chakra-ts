@@ -1,27 +1,65 @@
 {
-  "name": "jaredpalmer",
+  "name": "nextra-chakra-ts-blog-template",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build"
+    "build": "run-s \"build:**\"",
+    "build:web": "next build && next-sitemap",
+    "format": "run-p \"format:**\"",
+    "format:index": "prettier --write \"*.{js,json,md}\"",
+    "format:src": "prettier --write \"src/**/*.{css,js,ts,tsx}\"",
+    "eslint": "eslint **/*.{ts,tsx}",
+    "lint": "eslint --report-unused-disable-directives .",
+    "lint:fix": "eslint --fix"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.14",
+    "@chakra-ui/react": "^1.6.5",
+    "@chakra-ui/theme-tools": "^1.1.8",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@fontsource/ibm-plex-mono": "^4.5.0",
+    "@fontsource/ibm-plex-sans": "^4.5.0",
     "@mdx-js/react": "^1.6.22",
+    "framer-motion": "^4.1.17",
     "next": "^11.0.1",
-    "nextra": "^0.4.5",
+    "next-seo": "^4.26.0",
+    "nextra": "^1.1.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.4.1",
-    "autoprefixer": "^10.0.4",
-    "postcss": "^8.1.10",
-    "tailwindcss": "^2.1.1"
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-query": "^3.19.2"
   },
   "prettier": {
     "printWidth": 80,
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@testing-library/cypress": "^8.0.0",
+    "@types/node": "^16.4.13",
+    "@types/react": "^17.0.16",
+    "@types/react-dom": "^17.0.9",
+    "@types/webpack-env": "^1.16.2",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "cypress": "^8.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "next-sitemap": "^1.6.148",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.2",
+    "react-docgen": "^5.4.0",
+    "typescript": "^4.3.5"
   }
 }
