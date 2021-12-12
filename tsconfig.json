@@ -34,11 +34,12 @@
     "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
     "types": [
-      "cypress", 
+      "cypress",
       "@testing-library/cypress",
       "webpack-env",
       "node"
-    ]
+    ],
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
